@@ -1,0 +1,135 @@
+:root {
+  --app-theme-clr-1: #1dc677;
+  --app-theme-clr-2: #fff;
+  --app-font-clr-light: #fff;
+  --app-font-clr-dark: #0f0f0f;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--app-font-clr-dark, #000);
+}
+
+body.dark{
+    --app-theme-clr-1: #188e57;
+    --app-theme-clr-2: #262629;
+
+    color: var(--app-font-clr-light, #000);
+}
+
+main{
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.bg-theme-1 {
+  background-color: var(--app-theme-clr-1, #fafafa);
+}
+
+.bg-theme-2 {
+  background-color: var(--app-theme-clr-2, #fff);
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.dark .logo {
+    filter: invert(1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-calculate {
+    width: 100%;
+}
+
+.btn-calculate,
+.btn-history {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.result-popup .modal-dialog {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.result-popup .modal-content {
+  border-radius: 10px;
+}
+
+.result-popup .modal-body p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.history-popup .modal-dialog {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.history-popup .modal-content {
+  border-radius: 10px;
+}
+
+.history-popup .modal-body {
+  padding: 20px;
+}
+
+.history-popup .modal-body .history-item {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.history-popup .modal-body .history-item:last-child {
+  border-bottom: none;
+}
+
+.history-popup .modal-body .history-item .delete-btn {
+  color: red;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}
+
+.btn-close{
+    border: none !important;
+    box-shadow: none !important;
+}

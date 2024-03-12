@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aman Panchal">
+    <title>Fiverr Income Calculator</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="/js/script.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
+  </head>
+  <body class="bg-theme-1">
+  <main class="d-grid justify-content-center align-items-center p-3">
+    
+      <div class="container position-relative bg-theme-2 p-3 p-md-5 m-0">
+        <div class="text-center mb-4 pb-2">
+          <a class="brand-logo" href="/"><img src="/images/fiverr-logo.svg" alt="Fiverr Logo" class="logo mx-auto"></a>
+        </div>
+          <form id="calculatorForm">
+              <div class="mb-3">
+                  <label for="amount" class="form-label">Amount ($):</label>
+                  <input type="number" id="amount" class="form-control" value="100">
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="paypal-conv-rate" class="form-label">PayPal Conversion Rate:</label>
+                      <input type="number" id="paypal-conv-rate" class="form-control" value="79.88">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="payoneer-conv-rate" class="form-label">Payoneer Conversion Rate:</label>
+                      <input type="number" id="payoneer-conv-rate" class="form-control" value="82">
+                  </div>
+              </div>
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="paypal-fee" class="form-label">PayPal Fee ($):</label>
+                      <input type="number" id="paypal-fee" class="form-control" value="0">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="payoneer-fee" class="form-label">Payoneer Fee ($):</label>
+                      <input type="number" id="payoneer-fee" class="form-control" value="3">
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="currency" class="form-label">Currency:</label>
+                  <select id="currency" class="form-select">
+                      <option value="INR" selected>₹ (Rupee)</option>
+                      <!-- Add other currency options here -->
+                  </select>
+              </div>
+              <hr class="my-3 mt-4">
+              <button id="calculateIncomeBtn" type="button" class="btn btn-success btn-calculate mt-2" data-bs-toggle="modal" data-bs-target="#resultPopup">Calculate</button>
+              <button type="reset" class="btn btn-danger btn-calculate mt-2 mb-3 mb-md-0">Reset</button>
+              <button type="button" class="btn btn-history position-absolute top-0 end-0 p-2 m-2 border-0" data-bs-toggle="modal" data-bs-target="#historyPopup"><i class="fa-solid fa-clock-rotate-left"></i></button>
+          </form>
+          <div class="position-absolute text-secondary fw-semibold user-select-none bottom-0 end-0 px-2 mb-1"><small>Developed by <span id="appAuthor" class="fw-bold">Aman Panchal</span></small></di>
+      </div>
+
+      <div class="modal fade" id="resultPopup" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Result</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body" id="resultText"></div>
+              </div>
+          </div>
+      </div>
+
+      <div class="modal fade" id="historyPopup" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">History</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body px-2 py-3" id="historyBody"><h6 class="text-center text-capitalize fw-semibold">History not Available</h6></div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" onclick="clearCalcHistory()">Clear History</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+</body>
+</html>

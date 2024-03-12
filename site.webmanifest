@@ -1,0 +1,21 @@
+{
+  "name": "Fiverr Income Calculator",
+  "short_name": "Fiverr Calculator",
+  "description": "Calculate income and choose the best withdrawal method for freelancers on Fiverr.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1dc677",
+  "theme_color": "#1cbe72",
+  "icons": [
+    {
+      "src": "/images/fiverr-logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/fiverr-logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
